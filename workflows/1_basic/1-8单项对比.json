@@ -1,0 +1,268 @@
+{
+  "last_node_id": 12,
+  "last_link_id": 9,
+  "nodes": [
+    {
+      "id": 11,
+      "type": "easy promptLine",
+      "pos": [
+        760,
+        490
+      ],
+      "size": {
+        "0": 230,
+        "1": 320
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6,
+          "label": "字符串",
+          "slot_index": 0
+        },
+        {
+          "name": "COMBO",
+          "type": "*",
+          "links": [
+            8
+          ],
+          "shape": 6,
+          "label": "COMBO",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy promptLine"
+      },
+      "widgets_values": [
+        "normal\nkarras\nexponential\nsgm_uniform\nsimple\nddim_uniform\nalign_your_steps",
+        0,
+        1000,
+        ""
+      ],
+      "color": "#008181"
+    },
+    {
+      "id": 12,
+      "type": "easy a1111Loader",
+      "pos": [
+        450,
+        480
+      ],
+      "size": {
+        "0": 300,
+        "1": 334
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "LoRA堆（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            9
+          ],
+          "shape": 3,
+          "label": "节点束"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "模型"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy a1111Loader"
+      },
+      "widgets_values": [
+        "Anime\\儿童插画绘本Minimalism_v2.0.safetensors",
+        "kl-f8-anime2.ckpt",
+        -2,
+        "None",
+        1,
+        1,
+        "768 x 768",
+        512,
+        512,
+        "girl hugging (one pig), cute, painting",
+        "text,watermark, embedding:badhandv4, ",
+        1,
+        true
+      ]
+    },
+    {
+      "id": 9,
+      "type": "easy preSampling",
+      "pos": [
+        1000,
+        490
+      ],
+      "size": {
+        "0": 210,
+        "1": 320
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 9,
+          "label": "节点束"
+        },
+        {
+          "name": "image_to_latent",
+          "type": "IMAGE",
+          "link": null,
+          "label": "图像（可选）"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "Latent（可选）"
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": 8,
+          "widget": {
+            "name": "scheduler"
+          },
+          "label": "调度器"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            6
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSampling"
+      },
+      "widgets_values": [
+        25,
+        7,
+        "dpmpp_2m",
+        "normal",
+        1,
+        849987078927832,
+        "fixed"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "easy kSampler",
+      "pos": [
+        460,
+        850
+      ],
+      "size": {
+        "0": 750,
+        "1": 450
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 6,
+          "label": "节点束"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "模型（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "节点束"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "图像"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    }
+  ],
+  "links": [
+    [
+      6,
+      9,
+      0,
+      10,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      8,
+      11,
+      1,
+      9,
+      3,
+      "COMBO"
+    ],
+    [
+      9,
+      12,
+      0,
+      9,
+      0,
+      "PIPE_LINE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

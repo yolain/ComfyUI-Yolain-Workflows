@@ -1,0 +1,789 @@
+{
+  "last_node_id": 12,
+  "last_link_id": 8,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "easy kSampler",
+      "pos": [
+        730,
+        123.2054309448241
+      ],
+      "size": {
+        "0": 280,
+        "1": 490
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 2,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "easy preSampling",
+      "pos": [
+        370,
+        123.2054309448241
+      ],
+      "size": {
+        "0": 320,
+        "1": 242
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 1,
+          "label": "pipe"
+        },
+        {
+          "name": "image_to_latent",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image_to_latent"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "latent"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            2
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSampling"
+      },
+      "widgets_values": [
+        20,
+        8,
+        "dpmpp_2m",
+        "karras",
+        1,
+        236370671715313,
+        "fixed"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "easy kSampler",
+      "pos": [
+        1780.230202421875,
+        119.0689239282225
+      ],
+      "size": {
+        "0": 280,
+        "1": 490
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 4,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "easy comfyLoader",
+      "pos": [
+        1110,
+        119.0689239282225
+      ],
+      "size": {
+        "0": 290,
+        "1": 310
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "optional_lora_stack"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "model"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy comfyLoader"
+      },
+      "widgets_values": [
+        "Real\\墨幽人造人_v1080-none.safetensors",
+        "Baked VAE",
+        -1,
+        "None",
+        1,
+        1,
+        "512 x 768",
+        512,
+        512,
+        "1girl sitting on a bus, (school uniform:1.3), park, head portrait, real photo, realistic, masterpiece, best quality,",
+        " text, watermark, nsfw",
+        1
+      ]
+    },
+    {
+      "id": 1,
+      "type": "easy a1111Loader",
+      "pos": [
+        40,
+        120
+      ],
+      "size": {
+        "0": 300,
+        "1": 334
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "optional_lora_stack"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            1
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "model"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy a1111Loader"
+      },
+      "widgets_values": [
+        "Real\\墨幽人造人_v1080-none.safetensors",
+        "Baked VAE",
+        -1,
+        "None",
+        1,
+        1,
+        "512 x 768",
+        512,
+        512,
+        "1girl sitting on a bus, (school uniform:1.3), park, head portrait, real photo, realistic, masterpiece, best quality,",
+        " text, watermark, nsfw",
+        1,
+        false
+      ]
+    },
+    {
+      "id": 5,
+      "type": "easy preSampling",
+      "pos": [
+        1420,
+        120
+      ],
+      "size": {
+        "0": 320,
+        "1": 242
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 5,
+          "label": "pipe"
+        },
+        {
+          "name": "image_to_latent",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image_to_latent"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "latent"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            4
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSampling"
+      },
+      "widgets_values": [
+        20,
+        8,
+        "dpmpp_2m",
+        "karras",
+        1,
+        236370671715313,
+        "fixed"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "easy fullLoader",
+      "pos": [
+        50,
+        750
+      ],
+      "size": {
+        "0": 310,
+        "1": 534
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_override",
+          "type": "MODEL",
+          "link": null,
+          "label": "model_override"
+        },
+        {
+          "name": "clip_override",
+          "type": "CLIP",
+          "link": null,
+          "label": "clip_override"
+        },
+        {
+          "name": "vae_override",
+          "type": "VAE",
+          "link": null,
+          "label": "vae_override"
+        },
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "optional_lora_stack"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            7
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "model"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3,
+          "label": "clip"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "negative"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3,
+          "label": "latent"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy fullLoader"
+      },
+      "widgets_values": [
+        "Real\\墨幽人造人_v1080-none.safetensors",
+        "Default",
+        "Baked VAE",
+        -1,
+        "None",
+        1,
+        1,
+        "512 x 768",
+        512,
+        512,
+        "1girl sitting on a bus, (school uniform:1.3), park, head portrait, real photo, realistic, masterpiece, best quality,",
+        "none",
+        "comfy",
+        " text, watermark, nsfw",
+        "none",
+        "comfy",
+        1,
+        false
+      ]
+    },
+    {
+      "id": 11,
+      "type": "PreviewImage",
+      "pos": [
+        750,
+        810
+      ],
+      "size": {
+        "0": 280,
+        "1": 450
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 10,
+      "type": "easy fullkSampler",
+      "pos": [
+        380,
+        740
+      ],
+      "size": [
+        340,
+        600
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 7,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "negative"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "latent"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "label": "vae"
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null,
+          "label": "clip"
+        },
+        {
+          "name": "xyPlot",
+          "type": "XYPLOT",
+          "link": null,
+          "label": "xyPlot"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            8
+          ],
+          "shape": 3,
+          "label": "image",
+          "slot_index": 1
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "negative"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3,
+          "label": "latent"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3,
+          "label": "clip"
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "seed"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy fullkSampler"
+      },
+      "widgets_values": [
+        20,
+        8,
+        "dpmpp_2m",
+        "karras",
+        1,
+        "Preview",
+        0,
+        "ComfyUI",
+        236370671715313,
+        "fixed"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "easy globalSeed",
+      "pos": [
+        1120,
+        760
+      ],
+      "size": [
+        320,
+        130
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "properties": {
+        "Node name for S&R": "easy globalSeed"
+      },
+      "widgets_values": [
+        236370671715313,
+        true,
+        "randomize",
+        0
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      2,
+      2,
+      0,
+      3,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      4,
+      5,
+      0,
+      6,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      5,
+      7,
+      0,
+      5,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      7,
+      9,
+      0,
+      10,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      8,
+      10,
+      1,
+      11,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "方式一：A1111加载器 ",
+      "bounding": [
+        21,
+        26,
+        1036,
+        606
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "方式二：Comfy加载器",
+      "bounding": [
+        1082,
+        26,
+        1008,
+        609
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "方式三：完整加载器",
+      "bounding": [
+        21,
+        657,
+        1036,
+        775
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "可通过全局seed节点统一随机种子值",
+      "bounding": [
+        1082,
+        660,
+        421,
+        268
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {
+    "note": "<h5>Comfy加载器</h5><p>Comfy默认权重理解</p><h5>A1111加载器</h5><p>A1111默认权重理解，开启A1111提示词风格可生成与webui较相似图片，需下载<a href='https://github.com/shiimizu/ComfyUI_smZNodes' target='_blank'>ComfyUI-smzNodes</a>节点包</p>"
+  },
+  "version": 0.4
+}

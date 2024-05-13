@@ -1,0 +1,2359 @@
+{
+  "last_node_id": 69,
+  "last_link_id": 106,
+  "nodes": [
+    {
+      "id": 12,
+      "type": "Reroute",
+      "pos": [
+        738.4960214843752,
+        1083.4271704101545
+      ],
+      "size": [
+        115.6,
+        26
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 8,
+          "pos": [
+            57.8,
+            0
+          ],
+          "label": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "PIPE_LINE",
+          "type": "PIPE_LINE",
+          "links": [
+            9
+          ],
+          "slot_index": 0,
+          "label": "PIPE_LINE"
+        }
+      ],
+      "properties": {
+        "showOutputText": true,
+        "horizontal": true
+      }
+    },
+    {
+      "id": 17,
+      "type": "Reroute",
+      "pos": [
+        1461.3292978515624,
+        1081.2961015624994
+      ],
+      "size": [
+        115.6,
+        26
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 13,
+          "pos": [
+            57.8,
+            0
+          ],
+          "label": "",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "PIPE_LINE",
+          "type": "PIPE_LINE",
+          "links": [
+            14
+          ],
+          "slot_index": 0,
+          "label": "PIPE_LINE"
+        }
+      ],
+      "properties": {
+        "showOutputText": true,
+        "horizontal": true
+      }
+    },
+    {
+      "id": 13,
+      "type": "Prompts Everywhere",
+      "pos": [
+        330,
+        1440
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "STRING",
+          "type": "*",
+          "link": 20,
+          "label": "STRING",
+          "slot_index": 0,
+          "color_on": ""
+        },
+        {
+          "name": "STRING",
+          "type": "*",
+          "link": 11,
+          "label": "STRING",
+          "color_on": ""
+        }
+      ],
+      "properties": {
+        "group_restricted": false,
+        "color_restricted": false,
+        "Node name for S&R": "Prompts Everywhere"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 16,
+      "type": "easy preSamplingLayerDiffusion",
+      "pos": [
+        1840,
+        1190
+      ],
+      "size": {
+        "0": 260,
+        "1": 310
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 12,
+          "label": "pipe"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image"
+        },
+        {
+          "name": "blended_image",
+          "type": "IMAGE",
+          "link": null,
+          "label": "blended_image"
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": null,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            13
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSamplingLayerDiffusion"
+      },
+      "widgets_values": [
+        "Conv Injection",
+        1,
+        20,
+        5,
+        "euler_ancestral",
+        "karras",
+        1,
+        86280502350084,
+        "randomize"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "MaskToImage",
+      "pos": [
+        975.3397866210937,
+        -97.35836901855461
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 42,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            47
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskToImage"
+      }
+    },
+    {
+      "id": 26,
+      "type": "PreviewImage",
+      "pos": [
+        715.3397866210937,
+        12.64163098144531
+      ],
+      "size": {
+        "0": 210,
+        "1": 280
+      },
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 39,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 27,
+      "type": "PreviewImage",
+      "pos": [
+        960,
+        0
+      ],
+      "size": {
+        "0": 190,
+        "1": 280
+      },
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 40,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 36,
+      "type": "JoinImageWithAlpha",
+      "pos": [
+        1170,
+        180
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 49,
+          "label": "image"
+        },
+        {
+          "name": "alpha",
+          "type": "MASK",
+          "link": 51,
+          "label": "alpha"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            52
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JoinImageWithAlpha"
+      }
+    },
+    {
+      "id": 30,
+      "type": "PreviewImage",
+      "pos": [
+        1420,
+        -190
+      ],
+      "size": {
+        "0": 210,
+        "1": 250
+      },
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 48,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 39,
+      "type": "PreviewImage",
+      "pos": [
+        1420,
+        110
+      ],
+      "size": {
+        "0": 210,
+        "1": 250
+      },
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 52,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 38,
+      "type": "easy imageToMask",
+      "pos": [
+        1170,
+        50
+      ],
+      "size": {
+        "0": 210,
+        "1": 60
+      },
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 50,
+          "label": "image",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            51
+          ],
+          "shape": 3,
+          "label": "MASK",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy imageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ]
+    },
+    {
+      "id": 42,
+      "type": "easy bookmark",
+      "pos": [
+        710,
+        460
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "title": "🔖 A",
+      "properties": {},
+      "widgets_values": [
+        "A",
+        1.5
+      ]
+    },
+    {
+      "id": 43,
+      "type": "easy bookmark",
+      "pos": [
+        1090,
+        460
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 1,
+      "mode": 2,
+      "title": "🔖 B",
+      "properties": {},
+      "widgets_values": [
+        "B",
+        1.5
+      ]
+    },
+    {
+      "id": 44,
+      "type": "easy bookmark",
+      "pos": [
+        1470,
+        470
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 2,
+      "title": "🔖 C",
+      "properties": {},
+      "widgets_values": [
+        "C",
+        1.5
+      ]
+    },
+    {
+      "id": 41,
+      "type": "easy bookmark",
+      "pos": [
+        1430,
+        1040
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "mode": 2,
+      "title": "🔖 2",
+      "properties": {},
+      "widgets_values": [
+        "2",
+        1
+      ]
+    },
+    {
+      "id": 21,
+      "type": "Reroute",
+      "pos": [
+        2640,
+        1050
+      ],
+      "size": [
+        115.6,
+        26
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 18,
+          "pos": [
+            57.8,
+            0
+          ],
+          "label": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "PIPE_LINE",
+          "type": "PIPE_LINE",
+          "links": [
+            19
+          ],
+          "slot_index": 0,
+          "label": "PIPE_LINE"
+        }
+      ],
+      "properties": {
+        "showOutputText": true,
+        "horizontal": true
+      }
+    },
+    {
+      "id": 45,
+      "type": "easy bookmark",
+      "pos": [
+        2180,
+        1050
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 4,
+      "mode": 2,
+      "title": "🔖 3",
+      "properties": {},
+      "widgets_values": [
+        "3",
+        1
+      ]
+    },
+    {
+      "id": 10,
+      "type": "easy negative",
+      "pos": [
+        320,
+        1140
+      ],
+      "size": {
+        "0": 310,
+        "1": 230
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            11
+          ],
+          "shape": 3,
+          "label": "negative",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy negative"
+      },
+      "widgets_values": [
+        "text, watermark, girl, cat"
+      ],
+      "color": "#af3535"
+    },
+    {
+      "id": 14,
+      "type": "easy kSamplerLayerDiffusion",
+      "pos": [
+        1100,
+        490
+      ],
+      "size": {
+        "0": 280,
+        "1": 440
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 14,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "final_image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "final_image"
+        },
+        {
+          "name": "original_image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "original_image"
+        },
+        {
+          "name": "alpha",
+          "type": "MASK",
+          "links": null,
+          "shape": 6,
+          "label": "alpha"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSamplerLayerDiffusion"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 40,
+      "type": "easy bookmark",
+      "pos": [
+        710,
+        1050
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 6,
+      "mode": 0,
+      "title": "🔖 1",
+      "properties": {},
+      "widgets_values": [
+        "1",
+        1.5
+      ]
+    },
+    {
+      "id": 19,
+      "type": "easy preSamplingLayerDiffusionADDTL",
+      "pos": [
+        2580,
+        1190
+      ],
+      "size": {
+        "0": 320,
+        "1": 490
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 17,
+          "label": "pipe"
+        },
+        {
+          "name": "optional_fg_cond",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "optional_fg_cond"
+        },
+        {
+          "name": "optional_bg_cond",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "optional_bg_cond"
+        },
+        {
+          "name": "optional_blended_cond",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "optional_blended_cond"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSamplingLayerDiffusionADDTL"
+      },
+      "widgets_values": [
+        "panda",
+        "forest",
+        "panda in the forest"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "easy comfyLoader",
+      "pos": [
+        2190,
+        1090
+      ],
+      "size": {
+        "0": 350,
+        "1": 220
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "optional_lora_stack"
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "positive"
+          },
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "negative"
+          },
+          "label": "negative"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            16
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "model"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy comfyLoader"
+      },
+      "widgets_values": [
+        "Anime\\儿童插画绘本Minimalism_v2.0.safetensors",
+        "kl-f8-anime2.ckpt",
+        -2,
+        "None",
+        1,
+        1,
+        "512 x 512",
+        512,
+        512,
+        "Positive",
+        "Negative",
+        6
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 23,
+      "type": "easy kSampler",
+      "pos": [
+        1470,
+        620
+      ],
+      "size": {
+        "0": 260,
+        "1": 320
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 19,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            70
+          ],
+          "shape": 3,
+          "label": "image",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "easy preSamplingLayerDiffusion",
+      "pos": [
+        2200,
+        1360
+      ],
+      "size": {
+        "0": 340,
+        "1": 310
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 16,
+          "label": "pipe"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image"
+        },
+        {
+          "name": "blended_image",
+          "type": "IMAGE",
+          "link": null,
+          "label": "blended_image"
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": null,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            17
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSamplingLayerDiffusion"
+      },
+      "widgets_values": [
+        "Everything",
+        1,
+        25,
+        7,
+        "dpmpp_2m",
+        "karras",
+        1,
+        1093451826662774,
+        "fixed"
+      ]
+    },
+    {
+      "id": 56,
+      "type": "PreviewImage",
+      "pos": [
+        1740,
+        620
+      ],
+      "size": {
+        "0": 230,
+        "1": 300
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 71,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 57,
+      "type": "PreviewImage",
+      "pos": [
+        1980,
+        670
+      ],
+      "size": {
+        "0": 210,
+        "1": 250
+      },
+      "flags": {},
+      "order": 29,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 72,
+          "label": "images",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 58,
+      "type": "PreviewImage",
+      "pos": [
+        2210,
+        660
+      ],
+      "size": {
+        "0": 210,
+        "1": 250
+      },
+      "flags": {},
+      "order": 30,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 73,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 55,
+      "type": "easy imageSplitList",
+      "pos": [
+        1490,
+        510
+      ],
+      "size": {
+        "0": 210,
+        "1": 66
+      },
+      "flags": {},
+      "order": 26,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 70,
+          "label": "images"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            71
+          ],
+          "shape": 3,
+          "label": "images",
+          "slot_index": 0
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            72
+          ],
+          "shape": 3,
+          "label": "images"
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            73
+          ],
+          "shape": 3,
+          "label": "images",
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy imageSplitList"
+      }
+    },
+    {
+      "id": 15,
+      "type": "easy comfyLoader",
+      "pos": [
+        1450,
+        1210
+      ],
+      "size": {
+        "0": 340,
+        "1": 270
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "optional_lora_stack"
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "positive"
+          },
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "negative"
+          },
+          "label": "negative"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            12
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "model"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy comfyLoader"
+      },
+      "widgets_values": [
+        "3D\\samaritan3dCartoon_v40SDXL.safetensors",
+        "Baked VAE",
+        -2,
+        "None",
+        1,
+        1,
+        "768 x 1024",
+        512,
+        512,
+        "Positive",
+        "Negative",
+        1
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 33,
+      "type": "Image Levels Adjustment",
+      "pos": [
+        1170,
+        -140
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 47,
+          "label": "image",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            48,
+            50
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image Levels Adjustment"
+      },
+      "widgets_values": [
+        85,
+        150,
+        160
+      ]
+    },
+    {
+      "id": 2,
+      "type": "easy comfyLoader",
+      "pos": [
+        730,
+        1200
+      ],
+      "size": {
+        "0": 340,
+        "1": 270
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "optional_lora_stack"
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "positive"
+          },
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "negative"
+          },
+          "label": "negative"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            98
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "model"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy comfyLoader"
+      },
+      "widgets_values": [
+        "3D\\samaritan3dCartoon_v40SDXL.safetensors",
+        "Baked VAE",
+        -2,
+        "None",
+        1,
+        1,
+        "768 x 1024",
+        512,
+        512,
+        "Positive",
+        "Negative",
+        1
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 66,
+      "type": "easy controlnetLoaderADV",
+      "pos": [
+        1080,
+        1670
+      ],
+      "size": {
+        "0": 315,
+        "1": 194
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 98,
+          "label": "pipe"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 100,
+          "label": "image"
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": null,
+          "label": "control_net"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            99
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "negative"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy controlnetLoaderADV"
+      },
+      "widgets_values": [
+        "xl\\sai_xl_canny_256lora.safetensors",
+        0.9,
+        0,
+        1,
+        0.8250000000000001
+      ]
+    },
+    {
+      "id": 67,
+      "type": "CannyEdgePreprocessor",
+      "pos": [
+        1090,
+        1920
+      ],
+      "size": {
+        "0": 320,
+        "1": 110
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 103,
+          "label": "image"
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "link": 102,
+          "widget": {
+            "name": "resolution"
+          },
+          "label": "resolution"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            100,
+            104
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CannyEdgePreprocessor"
+      },
+      "widgets_values": [
+        100,
+        200,
+        512
+      ]
+    },
+    {
+      "id": 8,
+      "type": "easy kSamplerLayerDiffusion",
+      "pos": [
+        730,
+        470
+      ],
+      "size": {
+        "0": 280,
+        "1": 450
+      },
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 9,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "final_image",
+          "type": "IMAGE",
+          "links": [
+            39,
+            49
+          ],
+          "shape": 3,
+          "label": "final_image",
+          "slot_index": 1
+        },
+        {
+          "name": "original_image",
+          "type": "IMAGE",
+          "links": [
+            40
+          ],
+          "shape": 3,
+          "label": "original_image",
+          "slot_index": 2
+        },
+        {
+          "name": "alpha",
+          "type": "MASK",
+          "links": [
+            42
+          ],
+          "shape": 6,
+          "label": "alpha",
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSamplerLayerDiffusion"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 69,
+      "type": "PreviewImage",
+      "pos": [
+        1210,
+        2110
+      ],
+      "size": [
+        190,
+        190
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 104,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 68,
+      "type": "easy imagePixelPerfect",
+      "pos": [
+        860,
+        2180
+      ],
+      "size": {
+        "0": 315,
+        "1": 100.00010681152344
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 15,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 101,
+          "label": "image",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "resolution",
+          "type": "INT",
+          "links": [
+            102
+          ],
+          "shape": 3,
+          "label": "resolution",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy imagePixelPerfect"
+      },
+      "widgets_values": [
+        "Just Resize",
+        ""
+      ]
+    },
+    {
+      "id": 25,
+      "type": "LoadImage",
+      "pos": [
+        730,
+        1720
+      ],
+      "size": [
+        250,
+        310
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 4,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            101,
+            103
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "pasted/image (14).png",
+        "image"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "easy wildcards",
+      "pos": [
+        317.71994799804685,
+        768.5201054687506
+      ],
+      "size": {
+        "0": 310,
+        "1": 300
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            20
+          ],
+          "shape": 3,
+          "label": "text"
+        },
+        {
+          "name": "populated_text",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "populated_text"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy wildcards"
+      },
+      "widgets_values": [
+        "cute chinese panda holding a bamboo, kongfu, attack posturing, pixar style, high quality",
+        "Select the LoRA to add to the text",
+        "Select the Wildcard to add to the text",
+        621436312767602,
+        "fixed",
+        false
+      ]
+    },
+    {
+      "id": 3,
+      "type": "easy preSamplingLayerDiffusion",
+      "pos": [
+        1130,
+        1160
+      ],
+      "size": {
+        "0": 260,
+        "1": 310
+      },
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 99,
+          "label": "pipe"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image"
+        },
+        {
+          "name": "blended_image",
+          "type": "IMAGE",
+          "link": null,
+          "label": "blended_image"
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": null,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            8
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSamplingLayerDiffusion"
+      },
+      "widgets_values": [
+        "Attention Injection",
+        1,
+        20,
+        5,
+        "dpmpp_2m",
+        "karras",
+        0.9,
+        621436312767602,
+        "fixed"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "easy globalSeed",
+      "pos": [
+        320,
+        500
+      ],
+      "size": {
+        "0": 310,
+        "1": 130
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "properties": {
+        "Node name for S&R": "easy globalSeed"
+      },
+      "widgets_values": [
+        621436312767602,
+        true,
+        "fixed",
+        937067581605291
+      ]
+    }
+  ],
+  "links": [
+    [
+      8,
+      3,
+      0,
+      12,
+      0,
+      "*"
+    ],
+    [
+      9,
+      12,
+      0,
+      8,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      11,
+      10,
+      0,
+      13,
+      1,
+      "STRING"
+    ],
+    [
+      12,
+      15,
+      0,
+      16,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      13,
+      16,
+      0,
+      17,
+      0,
+      "*"
+    ],
+    [
+      14,
+      17,
+      0,
+      14,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      16,
+      18,
+      0,
+      20,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      17,
+      20,
+      0,
+      19,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      18,
+      19,
+      0,
+      21,
+      0,
+      "*"
+    ],
+    [
+      19,
+      21,
+      0,
+      23,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      20,
+      24,
+      0,
+      13,
+      0,
+      "STRING"
+    ],
+    [
+      21,
+      24,
+      0,
+      2,
+      1,
+      "STRING"
+    ],
+    [
+      22,
+      10,
+      0,
+      2,
+      2,
+      "STRING"
+    ],
+    [
+      23,
+      24,
+      0,
+      15,
+      1,
+      "STRING"
+    ],
+    [
+      24,
+      10,
+      0,
+      15,
+      2,
+      "STRING"
+    ],
+    [
+      25,
+      24,
+      0,
+      2,
+      1,
+      "STRING"
+    ],
+    [
+      26,
+      10,
+      0,
+      2,
+      2,
+      "STRING"
+    ],
+    [
+      27,
+      24,
+      0,
+      15,
+      1,
+      "STRING"
+    ],
+    [
+      28,
+      10,
+      0,
+      15,
+      2,
+      "STRING"
+    ],
+    [
+      29,
+      24,
+      0,
+      18,
+      1,
+      "STRING"
+    ],
+    [
+      30,
+      10,
+      0,
+      18,
+      2,
+      "STRING"
+    ],
+    [
+      31,
+      24,
+      0,
+      2,
+      1,
+      "STRING"
+    ],
+    [
+      32,
+      10,
+      0,
+      2,
+      2,
+      "STRING"
+    ],
+    [
+      33,
+      24,
+      0,
+      15,
+      1,
+      "STRING"
+    ],
+    [
+      34,
+      10,
+      0,
+      15,
+      2,
+      "STRING"
+    ],
+    [
+      35,
+      24,
+      0,
+      18,
+      1,
+      "STRING"
+    ],
+    [
+      36,
+      10,
+      0,
+      18,
+      2,
+      "STRING"
+    ],
+    [
+      37,
+      24,
+      0,
+      2,
+      1,
+      "STRING"
+    ],
+    [
+      38,
+      10,
+      0,
+      2,
+      2,
+      "STRING"
+    ],
+    [
+      39,
+      8,
+      1,
+      26,
+      0,
+      "IMAGE"
+    ],
+    [
+      40,
+      8,
+      2,
+      27,
+      0,
+      "IMAGE"
+    ],
+    [
+      42,
+      8,
+      3,
+      29,
+      0,
+      "MASK"
+    ],
+    [
+      47,
+      29,
+      0,
+      33,
+      0,
+      "IMAGE"
+    ],
+    [
+      48,
+      33,
+      0,
+      30,
+      0,
+      "IMAGE"
+    ],
+    [
+      49,
+      8,
+      1,
+      36,
+      0,
+      "IMAGE"
+    ],
+    [
+      50,
+      33,
+      0,
+      38,
+      0,
+      "IMAGE"
+    ],
+    [
+      51,
+      38,
+      0,
+      36,
+      1,
+      "MASK"
+    ],
+    [
+      52,
+      36,
+      0,
+      39,
+      0,
+      "IMAGE"
+    ],
+    [
+      53,
+      24,
+      0,
+      2,
+      1,
+      "STRING"
+    ],
+    [
+      54,
+      10,
+      0,
+      2,
+      2,
+      "STRING"
+    ],
+    [
+      55,
+      24,
+      0,
+      15,
+      1,
+      "STRING"
+    ],
+    [
+      56,
+      10,
+      0,
+      15,
+      2,
+      "STRING"
+    ],
+    [
+      68,
+      24,
+      0,
+      18,
+      1,
+      "STRING"
+    ],
+    [
+      69,
+      10,
+      0,
+      18,
+      2,
+      "STRING"
+    ],
+    [
+      70,
+      23,
+      1,
+      55,
+      0,
+      "IMAGE"
+    ],
+    [
+      71,
+      55,
+      0,
+      56,
+      0,
+      "IMAGE"
+    ],
+    [
+      72,
+      55,
+      1,
+      57,
+      0,
+      "IMAGE"
+    ],
+    [
+      73,
+      55,
+      2,
+      58,
+      0,
+      "IMAGE"
+    ],
+    [
+      98,
+      2,
+      0,
+      66,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      99,
+      66,
+      0,
+      3,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      100,
+      67,
+      0,
+      66,
+      1,
+      "IMAGE"
+    ],
+    [
+      101,
+      25,
+      0,
+      68,
+      0,
+      "IMAGE"
+    ],
+    [
+      102,
+      68,
+      0,
+      67,
+      1,
+      "INT"
+    ],
+    [
+      103,
+      25,
+      0,
+      67,
+      0,
+      "IMAGE"
+    ],
+    [
+      104,
+      67,
+      0,
+      69,
+      0,
+      "IMAGE"
+    ],
+    [
+      105,
+      24,
+      0,
+      2,
+      1,
+      "STRING"
+    ],
+    [
+      106,
+      10,
+      0,
+      2,
+      2,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Global Seed",
+      "bounding": [
+        300,
+        402,
+        350,
+        247
+      ],
+      "color": "#9d7010",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Prompt",
+      "bounding": [
+        301,
+        683,
+        349,
+        892
+      ],
+      "color": "#a17312",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Method1: Attension Injection (Support SDXL & SD15)",
+      "bounding": [
+        700,
+        976,
+        699,
+        592
+      ],
+      "color": "#1f1f49",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Preview Method 1",
+      "bounding": [
+        702,
+        402,
+        347,
+        543
+      ],
+      "color": "#1f1f49",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Method2: Conv Injection (Only Support SDXL)",
+      "bounding": [
+        1426,
+        975,
+        704,
+        596
+      ],
+      "color": "#1f1f49",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Preview Method 2",
+      "bounding": [
+        1080,
+        402,
+        342,
+        545
+      ],
+      "color": "#1f1f49",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Method3: Everything (Only Supoort SD15))",
+      "bounding": [
+        2154,
+        976,
+        836,
+        712
+      ],
+      "color": "#1f1f49",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Preview Method 3",
+      "bounding": [
+        1455,
+        403,
+        1016,
+        547
+      ],
+      "color": "#1f1f49",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "ControlNet",
+      "bounding": [
+        701,
+        1587,
+        737,
+        746
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Addtional ",
+      "bounding": [
+        702,
+        -248,
+        951,
+        619
+      ],
+      "color": "#88A",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

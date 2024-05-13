@@ -1,0 +1,95 @@
+{
+  "last_node_id": 2,
+  "last_link_id": 1,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "PreviewImage",
+      "pos": [
+        1410,
+        1160
+      ],
+      "size": [
+        690,
+        440
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 1,
+      "type": "easy stableDiffusion3API",
+      "pos": [
+        1070,
+        1160
+      ],
+      "size": [
+        330,
+        440
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_image",
+          "type": "IMAGE",
+          "link": null,
+          "label": "optional_image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            1
+          ],
+          "shape": 3,
+          "label": "image",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy stableDiffusion3API"
+      },
+      "widgets_values": [
+        "A classic oil painting depicting a group of cats dressed in formal attire, attending a fancy dinner party and discussing the latest catnip gossip. \n(masterpiece, award winning artwork)\nmany details, extreme detailed, full of details,\nWide range of colors, high Dynamic",
+        "",
+        "sd3-turbo",
+        "16:9",
+        135078548,
+        "randomize",
+        1,
+        "-4",
+        null
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

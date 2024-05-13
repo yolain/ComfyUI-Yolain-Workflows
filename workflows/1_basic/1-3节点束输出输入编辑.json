@@ -1,0 +1,1099 @@
+{
+  "last_node_id": 23,
+  "last_link_id": 31,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "easy a1111Loader",
+      "pos": [
+        20,
+        60
+      ],
+      "size": {
+        "0": 370,
+        "1": 334
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "Lora堆（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            3
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "模型"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy a1111Loader"
+      },
+      "widgets_values": [
+        "Real\\analogMadness_v60.safetensors",
+        "Baked VAE",
+        -1,
+        "None",
+        1,
+        1,
+        "768 x 768",
+        512,
+        512,
+        "beautiful yard, landscape design, lighting, (sun:1.4), forest,fog",
+        "text, watermark",
+        1,
+        false
+      ]
+    },
+    {
+      "id": 3,
+      "type": "easy kSampler",
+      "pos": [
+        800,
+        60
+      ],
+      "size": {
+        "0": 400,
+        "1": 470
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 2,
+          "label": "节点束"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "模型（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            28
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            29
+          ],
+          "shape": 3,
+          "label": "图像",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "easy preSampling",
+      "pos": [
+        420,
+        60
+      ],
+      "size": {
+        "0": 360,
+        "1": 242
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 4,
+          "label": "节点束"
+        },
+        {
+          "name": "image_to_latent",
+          "type": "IMAGE",
+          "link": null,
+          "label": "图像（可选）"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "Latent（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            2
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSampling"
+      },
+      "widgets_values": [
+        20,
+        5,
+        "dpmpp_3m_sde",
+        "karras",
+        1,
+        848721622412845,
+        "fixed"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "easy preSampling",
+      "pos": [
+        1580,
+        60
+      ],
+      "size": {
+        "0": 360,
+        "1": 242
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 30,
+          "label": "节点束"
+        },
+        {
+          "name": "image_to_latent",
+          "type": "IMAGE",
+          "link": null,
+          "label": "图像（可选）"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "Latent（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            31
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSampling"
+      },
+      "widgets_values": [
+        20,
+        5,
+        "dpmpp_3m_sde",
+        "karras",
+        0.55,
+        210764113962618,
+        "randomize"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "easy pipeEdit",
+      "pos": [
+        1220,
+        60
+      ],
+      "size": {
+        "0": 340,
+        "1": 660
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 28,
+          "label": "节点束"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "模型"
+        },
+        {
+          "name": "pos",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "pos"
+        },
+        {
+          "name": "neg",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "neg"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "Latent"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "label": "vae"
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null,
+          "label": "clip"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 29,
+          "label": "图像"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            30
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "模型"
+        },
+        {
+          "name": "pos",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "pos"
+        },
+        {
+          "name": "neg",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "neg"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3,
+          "label": "Latent"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3,
+          "label": "clip"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "图像"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy pipeEdit"
+      },
+      "widgets_values": [
+        -2,
+        "most rose flowers, (sun:1.4) lighting, Tindal ",
+        "none",
+        "comfy",
+        "",
+        "none",
+        "comfy",
+        false,
+        "replace",
+        1,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 23,
+      "type": "easy kSampler",
+      "pos": [
+        1580,
+        340
+      ],
+      "size": {
+        "0": 360,
+        "1": 370
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 31,
+          "label": "节点束"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "模型（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "label": "图像",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "easy pipeOut",
+      "pos": [
+        410,
+        350
+      ],
+      "size": {
+        "0": 140,
+        "1": 190
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 3,
+          "label": "节点束"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "model"
+        },
+        {
+          "name": "pos",
+          "type": "CONDITIONING",
+          "links": [
+            6
+          ],
+          "shape": 3,
+          "label": "pos",
+          "slot_index": 2
+        },
+        {
+          "name": "neg",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "neg"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3,
+          "label": "latent"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": [
+            17,
+            27
+          ],
+          "shape": 3,
+          "label": "clip",
+          "slot_index": 6
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "seed"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy pipeOut"
+      }
+    },
+    {
+      "id": 5,
+      "type": "easy pipeIn",
+      "pos": [
+        650,
+        350
+      ],
+      "size": {
+        "0": 140,
+        "1": 190
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 5,
+          "label": "节点束"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "模型"
+        },
+        {
+          "name": "pos",
+          "type": "CONDITIONING",
+          "link": 24,
+          "label": "pos"
+        },
+        {
+          "name": "neg",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "neg"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "Latent"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "label": "vae"
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null,
+          "label": "clip"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": null,
+          "label": "图像"
+        },
+        {
+          "name": "xyPlot",
+          "type": "XYPLOT",
+          "link": null,
+          "label": "xyPlot"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            4
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy pipeIn"
+      }
+    },
+    {
+      "id": 14,
+      "type": "CLIPTextEncode",
+      "pos": [
+        350,
+        760
+      ],
+      "size": {
+        "0": 310,
+        "1": 90
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 27,
+          "label": "CLIP",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            25
+          ],
+          "shape": 3,
+          "label": "条件",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "spring"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "CLIPTextEncode",
+      "pos": [
+        350,
+        620
+      ],
+      "size": [
+        310,
+        90
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 17,
+          "label": "CLIP"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "label": "条件",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "winter, house"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "ConditioningSetArea",
+      "pos": [
+        720,
+        590
+      ],
+      "size": {
+        "0": 211.60000610351562,
+        "1": 154
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 18,
+          "label": "条件"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            21
+          ],
+          "shape": 3,
+          "label": "条件",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningSetArea"
+      },
+      "widgets_values": [
+        384,
+        768,
+        384,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "type": "ConditioningSetArea",
+      "pos": [
+        730,
+        970
+      ],
+      "size": {
+        "0": 211.60000610351562,
+        "1": 154
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 6,
+          "label": "条件"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            20
+          ],
+          "shape": 3,
+          "label": "条件",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningSetArea"
+      },
+      "widgets_values": [
+        768,
+        768,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 20,
+      "type": "ConditioningSetArea",
+      "pos": [
+        720,
+        780
+      ],
+      "size": {
+        "0": 211.60000610351562,
+        "1": 154
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 25,
+          "label": "条件"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            26
+          ],
+          "shape": 3,
+          "label": "条件",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningSetArea"
+      },
+      "widgets_values": [
+        384,
+        768,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 18,
+      "type": "ConditioningCombine",
+      "pos": [
+        970,
+        810
+      ],
+      "size": {
+        "0": 230,
+        "1": 50
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 20,
+          "label": "条件1"
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 21,
+          "label": "条件2"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            22
+          ],
+          "shape": 3,
+          "label": "条件",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningCombine"
+      }
+    },
+    {
+      "id": 19,
+      "type": "ConditioningCombine",
+      "pos": [
+        960,
+        690
+      ],
+      "size": {
+        "0": 230,
+        "1": 50
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 22,
+          "label": "条件1"
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 26,
+          "label": "条件2"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            24
+          ],
+          "shape": 3,
+          "label": "条件",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningCombine"
+      }
+    }
+  ],
+  "links": [
+    [
+      2,
+      2,
+      0,
+      3,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      3,
+      1,
+      0,
+      4,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      4,
+      5,
+      0,
+      2,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      5,
+      4,
+      0,
+      5,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      6,
+      4,
+      2,
+      6,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      17,
+      4,
+      6,
+      13,
+      0,
+      "CLIP"
+    ],
+    [
+      18,
+      13,
+      0,
+      9,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      20,
+      6,
+      0,
+      18,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      21,
+      9,
+      0,
+      18,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      22,
+      18,
+      0,
+      19,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      24,
+      19,
+      0,
+      5,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      25,
+      14,
+      0,
+      20,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      26,
+      20,
+      0,
+      19,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      27,
+      4,
+      6,
+      14,
+      0,
+      "CLIP"
+    ],
+    [
+      28,
+      3,
+      0,
+      21,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      29,
+      3,
+      1,
+      21,
+      7,
+      "IMAGE"
+    ],
+    [
+      30,
+      21,
+      0,
+      22,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      31,
+      22,
+      0,
+      23,
+      0,
+      "PIPE_LINE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "note": "<p>pipeIn和pipeOut可补足简化节点中未呈现的输入输出口</p><p>pipeEdit可方便在节点束流程中途修改提示词等</p>"
+  },
+  "version": 0.4
+}

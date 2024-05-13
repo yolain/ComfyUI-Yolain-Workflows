@@ -1,0 +1,483 @@
+{
+  "last_node_id": 243,
+  "last_link_id": 269,
+  "nodes": [
+    {
+      "id": 238,
+      "type": "easy XYInputs: Seeds++ Batch",
+      "pos": [
+        510,
+        280
+      ],
+      "size": [
+        280,
+        60
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "X or Y",
+          "type": "X_Y",
+          "links": [
+            266
+          ],
+          "shape": 3,
+          "label": "X or Y"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy XYInputs: Seeds++ Batch"
+      },
+      "widgets_values": [
+        2
+      ]
+    },
+    {
+      "id": 166,
+      "type": "easy preSampling",
+      "pos": [
+        810,
+        -110
+      ],
+      "size": {
+        "0": 260,
+        "1": 242
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 218,
+          "label": "节点束"
+        },
+        {
+          "name": "image_to_latent",
+          "type": "IMAGE",
+          "link": null,
+          "label": "图像（可选）"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "Latent（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            260
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSampling"
+      },
+      "widgets_values": [
+        20,
+        5.5,
+        "ddpm",
+        "karras",
+        1,
+        213556411280851,
+        "fixed"
+      ]
+    },
+    {
+      "id": 130,
+      "type": "easy negative",
+      "pos": [
+        180,
+        300
+      ],
+      "size": [
+        310,
+        200
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            90
+          ],
+          "shape": 3,
+          "label": "负面提示词",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy negative"
+      },
+      "widgets_values": [
+        " ((((bad-picture-chill-75v)))),(worst quality:2),(low quality:2),(normal quality:2),((((((monochrome)))))),((grayscale:1.2)),fewer fingers,extra girls,multiple girls,extra body,extra hands,extra,((extra fingers)),too many fingers,((bad hands)),(((bad arms)),watermark,blurred,painting,drawing,illustration,glitch,deformed,mutated,cross-eyed,ugly,disfigured,((nsfw))\n\n"
+      ],
+      "color": "#af3535"
+    },
+    {
+      "id": 243,
+      "type": "easy wildcards",
+      "pos": [
+        180,
+        -100
+      ],
+      "size": [
+        310,
+        340
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            269
+          ],
+          "shape": 6,
+          "label": "提示词"
+        },
+        {
+          "name": "populated_text",
+          "type": "STRING",
+          "links": null,
+          "shape": 6,
+          "label": "通配填充词"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy wildcards"
+      },
+      "widgets_values": [
+        "__muggle/muggle-shot__, 1girl",
+        "Select the LoRA to add to the text",
+        "Select the Wildcard to add to the text",
+        196771436577976,
+        "randomize",
+        false
+      ]
+    },
+    {
+      "id": 120,
+      "type": "easy a1111Loader",
+      "pos": [
+        510,
+        -110
+      ],
+      "size": {
+        "0": 280,
+        "1": 340
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "Lora堆（可选）"
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 269,
+          "widget": {
+            "name": "positive"
+          },
+          "label": "正面提示词"
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": 90,
+          "widget": {
+            "name": "negative"
+          },
+          "label": "负面提示词",
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            218
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [],
+          "shape": 3,
+          "label": "模型",
+          "slot_index": 1
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [],
+          "shape": 3,
+          "label": "vae",
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy a1111Loader"
+      },
+      "widgets_values": [
+        "Real\\墨幽人造人_v1080-none.safetensors",
+        "Baked VAE",
+        -1,
+        "None",
+        1,
+        1,
+        "自定义 x 自定义",
+        1024,
+        512,
+        "Positive",
+        "Negative",
+        1,
+        true,
+        "Ultra-realistic 8k CG,masterpiece,best quality,(photorealistic:1.4),HDR,absurdres,Professional,RAW photo,lens flare,(film grain:1.1),Bokeh,((Depth of field)),studio light, a woman in a uniform while standing on steps with a railing in the background, 1girl, black_hair, long_hair, pleated_skirt, sailor_collar, serafuku, school_uniform, shoulder_bag, skirt, solo, stairs, Highly detailed,Professional,extreme detail description;, 1girl"
+      ]
+    },
+    {
+      "id": 242,
+      "type": "easy XYInputs: Steps",
+      "pos": [
+        510,
+        380
+      ],
+      "size": [
+        280,
+        130
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "X or Y",
+          "type": "X_Y",
+          "links": [
+            268
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy XYInputs: Steps"
+      },
+      "widgets_values": [
+        "steps",
+        2,
+        20,
+        25,
+        0,
+        10,
+        10,
+        20
+      ]
+    },
+    {
+      "id": 236,
+      "type": "easy kSampler",
+      "pos": [
+        810,
+        180
+      ],
+      "size": [
+        490,
+        330
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 263,
+          "label": "节点束"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "模型（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "label": "图像",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 233,
+      "type": "easy XYPlotAdvanced",
+      "pos": [
+        1090,
+        -20
+      ],
+      "size": [
+        210,
+        150
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 260,
+          "label": "节点束"
+        },
+        {
+          "name": "X",
+          "type": "X_Y",
+          "link": 266,
+          "label": "X",
+          "slot_index": 1
+        },
+        {
+          "name": "Y",
+          "type": "X_Y",
+          "link": 268,
+          "label": "Y",
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            263
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "xyPlot",
+          "type": "XYPLOT",
+          "links": null,
+          "shape": 3,
+          "label": "xyPlot"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy XYPlotAdvanced"
+      },
+      "widgets_values": [
+        0,
+        "False",
+        "False"
+      ]
+    }
+  ],
+  "links": [
+    [
+      90,
+      130,
+      0,
+      120,
+      2,
+      "STRING"
+    ],
+    [
+      218,
+      120,
+      0,
+      166,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      260,
+      166,
+      0,
+      233,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      263,
+      233,
+      0,
+      236,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      266,
+      238,
+      0,
+      233,
+      1,
+      "X_Y"
+    ],
+    [
+      268,
+      242,
+      0,
+      233,
+      2,
+      "X_Y"
+    ],
+    [
+      269,
+      243,
+      0,
+      120,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

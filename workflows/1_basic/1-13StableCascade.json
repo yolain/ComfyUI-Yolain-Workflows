@@ -1,0 +1,305 @@
+{
+  "last_node_id": 59,
+  "last_link_id": 80,
+  "nodes": [
+    {
+      "id": 57,
+      "type": "easy fullCascadeKSampler",
+      "pos": [
+        1460,
+        1130
+      ],
+      "size": {
+        "0": 220,
+        "1": 550
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 78,
+          "label": "pipe"
+        },
+        {
+          "name": "image_to_latent_c",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image_to_latent_c"
+        },
+        {
+          "name": "latent_c",
+          "type": "LATENT",
+          "link": null,
+          "label": "latent_c"
+        },
+        {
+          "name": "model_c",
+          "type": "MODEL",
+          "link": null,
+          "label": "model_c"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            76
+          ],
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "model_b",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "model_b"
+        },
+        {
+          "name": "latent_b",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3,
+          "label": "latent_b"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy fullCascadeKSampler"
+      },
+      "widgets_values": [
+        "None",
+        "None",
+        15,
+        4.5,
+        "euler_ancestral",
+        "simple",
+        1,
+        "Preview",
+        0,
+        "ComfyUI",
+        19064447608006,
+        "fixed"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "easy kSampler",
+      "pos": [
+        1690,
+        1410
+      ],
+      "size": [
+        210,
+        270
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "easy preSampling",
+      "pos": [
+        1690,
+        1130
+      ],
+      "size": {
+        "0": 210,
+        "1": 242
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 76,
+          "label": "pipe"
+        },
+        {
+          "name": "image_to_latent",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image_to_latent"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "latent"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            3
+          ],
+          "shape": 3,
+          "label": "pipe"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSampling"
+      },
+      "widgets_values": [
+        10,
+        1.1,
+        "euler_ancestral",
+        "simple",
+        1,
+        587061783628805,
+        "randomize"
+      ]
+    },
+    {
+      "id": 59,
+      "type": "easy cascadeLoader",
+      "pos": [
+        1170,
+        1130
+      ],
+      "size": [
+        280,
+        550
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "optional_lora_stack"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            78
+          ],
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "model_c",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "model_c"
+        },
+        {
+          "name": "latent_c",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3,
+          "label": "latent_c"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy cascadeLoader"
+      },
+      "widgets_values": [
+        "Cascade\\stable_cascade_stage_c.safetensors",
+        "Cascade\\stable_cascade_stage_b.safetensors",
+        "Baked VAE",
+        "None",
+        "None",
+        1,
+        1,
+        "1024 x 1024",
+        1080,
+        832,
+        42,
+        "cinematic photo of a chinese girl raise up a sign \"Comfy\" at night, happy",
+        "worst quality, low quality",
+        1
+      ]
+    }
+  ],
+  "links": [
+    [
+      3,
+      3,
+      0,
+      4,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      76,
+      57,
+      0,
+      3,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      78,
+      59,
+      0,
+      57,
+      0,
+      "PIPE_LINE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

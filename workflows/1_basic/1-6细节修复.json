@@ -1,0 +1,480 @@
+{
+  "last_node_id": 7,
+  "last_link_id": 8,
+  "nodes": [
+    {
+      "id": 6,
+      "type": "easy samLoaderPipe",
+      "pos": [
+        420,
+        350
+      ],
+      "size": [
+        310,
+        230
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "sam_pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "label": "SAM模型节点束"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy samLoaderPipe"
+      },
+      "widgets_values": [
+        "sam_vit_b_01ec64.pth",
+        "AUTO",
+        "center-1",
+        0,
+        0.93,
+        0,
+        0.7,
+        "False"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "easy preDetailerFix",
+      "pos": [
+        1200,
+        50
+      ],
+      "size": [
+        270,
+        495.9999694824219
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 3,
+          "label": "节点束"
+        },
+        {
+          "name": "bbox_segm_pipe",
+          "type": "PIPE_LINE",
+          "link": 4,
+          "label": "BBox&Segm节点束",
+          "slot_index": 1
+        },
+        {
+          "name": "sam_pipe",
+          "type": "PIPE_LINE",
+          "link": 5,
+          "label": "SAM模型节点束",
+          "slot_index": 2
+        },
+        {
+          "name": "optional_image",
+          "type": "IMAGE",
+          "link": 8,
+          "label": "图像（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            6
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preDetailerFix"
+      },
+      "widgets_values": [
+        256,
+        true,
+        768,
+        751411654450157,
+        "randomize",
+        20,
+        8,
+        "euler",
+        "normal",
+        0.5,
+        5,
+        true,
+        true,
+        10,
+        "",
+        1
+      ]
+    },
+    {
+      "id": 7,
+      "type": "easy detailerFix",
+      "pos": [
+        1480,
+        50
+      ],
+      "size": [
+        390,
+        500
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 6,
+          "label": "节点束"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "模型"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "节点束"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "图像"
+        },
+        {
+          "name": "cropped_refined",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 6
+        },
+        {
+          "name": "cropped_enhanced_alpha",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy detailerFix"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "easy kSampler",
+      "pos": [
+        750,
+        50
+      ],
+      "size": [
+        440,
+        510
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 2,
+          "label": "节点束"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 7,
+          "label": "模型（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            3
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            8
+          ],
+          "shape": 3,
+          "label": "图像",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "easy a1111Loader",
+      "pos": [
+        20,
+        50
+      ],
+      "size": [
+        380,
+        334
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "Lora堆（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            1
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            7
+          ],
+          "shape": 3,
+          "label": "模型",
+          "slot_index": 1
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy a1111Loader"
+      },
+      "widgets_values": [
+        "Real\\墨幽人造人_v1080-none.safetensors",
+        "Baked VAE",
+        -1,
+        "None",
+        1,
+        1,
+        "768 x 768",
+        512,
+        512,
+        "1cute girl,half body,beach, white bra,hand",
+        "text,watermark,nsfw",
+        1,
+        false
+      ]
+    },
+    {
+      "id": 2,
+      "type": "easy preSampling",
+      "pos": [
+        420,
+        50
+      ],
+      "size": [
+        315,
+        242
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 1,
+          "label": "节点束"
+        },
+        {
+          "name": "image_to_latent",
+          "type": "IMAGE",
+          "link": null,
+          "label": "图像（可选）"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "Latent（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            2
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSampling"
+      },
+      "widgets_values": [
+        20,
+        8,
+        "euler",
+        "normal",
+        1,
+        49514932464093,
+        "fixed"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "easy ultralyticsDetectorPipe",
+      "pos": [
+        20,
+        440
+      ],
+      "size": [
+        380,
+        130
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "bbox_segm_pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            4
+          ],
+          "shape": 3,
+          "label": "BBox节点束"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy ultralyticsDetectorPipe"
+      },
+      "widgets_values": [
+        "bbox/face_yolov8m.pt",
+        0.5,
+        10,
+        3
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      2,
+      2,
+      0,
+      3,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      3,
+      3,
+      0,
+      4,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      4,
+      5,
+      0,
+      4,
+      1,
+      "PIPE_LINE"
+    ],
+    [
+      5,
+      6,
+      0,
+      4,
+      2,
+      "PIPE_LINE"
+    ],
+    [
+      6,
+      4,
+      0,
+      7,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      7,
+      1,
+      1,
+      3,
+      1,
+      "MODEL"
+    ],
+    [
+      8,
+      3,
+      1,
+      4,
+      3,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "note": "<p>需安装ComfyUI-Impact-Pack</p>"
+  },
+  "version": 0.4
+}

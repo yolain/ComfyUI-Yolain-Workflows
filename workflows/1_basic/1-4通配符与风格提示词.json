@@ -1,0 +1,416 @@
+{
+  "last_node_id": 6,
+  "last_link_id": 8,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "easy wildcards",
+      "pos": [
+        40,
+        120
+      ],
+      "size": [
+        400,
+        360
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "label": "提示词",
+          "slot_index": 0
+        },
+        {
+          "name": "populated_text",
+          "type": "STRING",
+          "links": null,
+          "shape": 6,
+          "label": "通配填充词"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy wildcards"
+      },
+      "widgets_values": [
+        "[chinese girl:(cat:1.3):4], beautiful face, masterpiece, 8k, realistic,  __person shot__",
+        "Select the LoRA to add to the text",
+        "Select the Wildcard to add to the text",
+        158423427712669,
+        "randomize",
+        false
+      ],
+      "color": "#346434"
+    },
+    {
+      "id": 2,
+      "type": "easy negative",
+      "pos": [
+        40,
+        530
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            6
+          ],
+          "shape": 3,
+          "label": "负面提示词",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy negative"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#af3535"
+    },
+    {
+      "id": 1,
+      "type": "easy a1111Loader",
+      "pos": [
+        890,
+        110
+      ],
+      "size": [
+        290,
+        334
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "Lora堆（可选）"
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 7,
+          "widget": {
+            "name": "positive"
+          },
+          "slot_index": 1,
+          "label": "正面提示词"
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": 8,
+          "widget": {
+            "name": "negative"
+          },
+          "slot_index": 2,
+          "label": "负面提示词"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            3
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "模型"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy a1111Loader"
+      },
+      "widgets_values": [
+        "Real\\墨幽人造人_v1080-none.safetensors",
+        "Baked VAE",
+        -1,
+        "None",
+        1,
+        1,
+        "768 x 1024",
+        512,
+        512,
+        "Positive",
+        "Negative",
+        1,
+        true,
+        "Atompunk illustation, [chinese girl:(cat:1.3):4], beautiful face, masterpiece, 8k, realistic,  cinematic shot,focus face . retro-futuristic, atomic age aesthetics, sleek lines, metallic textures, futuristic technology, optimism, energy, (masterpiece), (best quality), (ultra-detailed), illustration, disheveled hair, detailed eyes, perfect composition, moist skin, intricate details, earrings, by wlop",
+        "organic, natural textures, rustic, dystopian, longbody, lowres, bad anatomy, bad hands, missing fingers, pubic hair,extra digit, fewer digits, cropped, worst quality, low quality, (worst quality, low quality, normal quality, lowres, low details, oversaturated, undersaturated, overexposed, underexposed, grayscale, bw, bad photo, bad photography, bad art:1.4), (watermark, signature, text font, username, error, logo, words, letters, digits, autograph, trademark, name:1.2), (blur, blurry, grainy), morbid, ugly, asymmetrical, mutated malformed, mutilated, poorly lit, bad shadow, draft, cropped, out of frame, cut off, censored, jpeg artifacts, out of focus, glitch, duplicate, (airbrushed, cartoon, anime, semi-realistic, cgi, render, blender, digital art, manga, amateur:1.3), (3D ,3D Game, 3D Game Scene, 3D Character:1.1), (bad hands, bad anatomy, bad body, bad face, bad teeth, bad arms, bad legs, deformities:1.3)"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "easy kSampler",
+      "pos": [
+        1190,
+        100
+      ],
+      "size": [
+        420,
+        630
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 4,
+          "label": "节点束"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "模型（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "图像"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "easy stylesSelector",
+      "pos": [
+        450,
+        110
+      ],
+      "size": [
+        430,
+        620
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 5,
+          "widget": {
+            "name": "positive"
+          },
+          "label": "正面提示词（可选）"
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": 6,
+          "widget": {
+            "name": "negative"
+          },
+          "label": "负面提示词（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "links": [
+            7
+          ],
+          "shape": 3,
+          "label": "正面提示词",
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            8
+          ],
+          "shape": 3,
+          "label": "负面提示词",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "values": [
+          "MK atompunk",
+          "Fooocus Masterpiece",
+          "Fooocus Enhance"
+        ],
+        "Node name for S&R": "easy stylesSelector"
+      },
+      "widgets_values": [
+        "fooocus_styles",
+        "",
+        "",
+        "MK atompunk,Fooocus Masterpiece,Fooocus Enhance"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "easy preSampling",
+      "pos": [
+        890,
+        490
+      ],
+      "size": [
+        290,
+        240
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 3,
+          "label": "节点束"
+        },
+        {
+          "name": "image_to_latent",
+          "type": "IMAGE",
+          "link": null,
+          "label": "图像（可选）"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "Latent（可选）"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            4
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSampling"
+      },
+      "widgets_values": [
+        20,
+        8,
+        "dpmpp_2m",
+        "karras",
+        1,
+        198021618824289,
+        "randomize"
+      ]
+    }
+  ],
+  "links": [
+    [
+      3,
+      1,
+      0,
+      4,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      4,
+      4,
+      0,
+      5,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      5,
+      3,
+      0,
+      6,
+      0,
+      "STRING"
+    ],
+    [
+      6,
+      2,
+      0,
+      6,
+      1,
+      "STRING"
+    ],
+    [
+      7,
+      6,
+      0,
+      1,
+      1,
+      "STRING"
+    ],
+    [
+      8,
+      6,
+      1,
+      1,
+      2,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "note": "<h5>通配符提示词</h5><p>可在<a href='https://civitai.com/tag/wildcard' target='_blank'>C站</a> 或<a href='https://www.liblib.art/' target='_blank'>Liblib</a>寻找Wildcard类型文件下载或自行编辑放到wildcards目录下，重新启动即可在Wildcards节点中显现</p><h5>风格化提示词</h5><p>默认为Fooocus样式，可从Github中将样式预览图下载放到styles/samples底下</p>"
+  },
+  "version": 0.4
+}

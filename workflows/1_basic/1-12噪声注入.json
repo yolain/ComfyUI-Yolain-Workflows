@@ -1,0 +1,337 @@
+{
+  "last_node_id": 8,
+  "last_link_id": 11,
+  "nodes": [
+    {
+      "id": 5,
+      "type": "easy styleAlignedBatchAlign",
+      "pos": [
+        1410,
+        1080
+      ],
+      "size": {
+        "0": 310,
+        "1": 110
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 5,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            11
+          ],
+          "shape": 3,
+          "label": "MODEL",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy styleAlignedBatchAlign"
+      },
+      "widgets_values": [
+        "both",
+        "q+k",
+        1
+      ]
+    },
+    {
+      "id": 7,
+      "type": "easy kSampler",
+      "pos": [
+        1730,
+        720
+      ],
+      "size": {
+        "0": 400,
+        "1": 470
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 9,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model",
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "easy kSampler",
+      "pos": [
+        2140,
+        720
+      ],
+      "size": {
+        "0": 410,
+        "1": 470
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 4,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 11,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "easy preSamplingNoiseIn",
+      "pos": [
+        1410,
+        730
+      ],
+      "size": {
+        "0": 310,
+        "1": 290
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "optional_latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "optional_latent"
+        },
+        {
+          "name": "optional_noise_seed",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "optional_noise_seed"
+          },
+          "label": "optional_noise_seed"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            4,
+            9
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSamplingNoiseIn"
+      },
+      "widgets_values": [
+        0.1,
+        5,
+        1.5,
+        "euler_ancestral",
+        "karras",
+        1,
+        857183243421034,
+        "fixed",
+        0
+      ]
+    },
+    {
+      "id": 1,
+      "type": "easy a1111Loader",
+      "pos": [
+        1020,
+        730
+      ],
+      "size": [
+        380,
+        460
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "optional_lora_stack"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            3
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "label": "model",
+          "slot_index": 1
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy a1111Loader"
+      },
+      "widgets_values": [
+        "Anime\\动漫Gostly Cute_v1.0.safetensors",
+        "Baked VAE",
+        -2,
+        "speed\\lcm_lora_v1-5.safetensors",
+        1,
+        1,
+        "768 x 768",
+        512,
+        512,
+        "(green dog) very cute, comic",
+        "(worst quality:2),(low quality:2),(normal quality:2),lowres,bad anatomy,bad hands,((monochrome)),((grayscale)) watermark,moles,\n",
+        4,
+        false
+      ]
+    }
+  ],
+  "links": [
+    [
+      3,
+      1,
+      0,
+      4,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      4,
+      4,
+      0,
+      3,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      5,
+      1,
+      1,
+      5,
+      0,
+      "MODEL"
+    ],
+    [
+      9,
+      4,
+      0,
+      7,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      11,
+      5,
+      0,
+      3,
+      1,
+      "MODEL"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
