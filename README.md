@@ -1,13 +1,13 @@
-**![工作流封面](./assets/workflow_poster.gif)
+ ![工作流封面](./assets/workflow_poster.gif)
 
 
 <div align="center">
 
+[![Bilibili Badge](https://img.shields.io/badge/我的B站主页-0c65fc?style=for-the-badge&logo=bilibili&logoColor=white&link=https://space.bilibili.com/1840885116)](https://space.bilibili.com/1840885116)
+
 ## 工作流合集
 Yolain's ComfyUI Workflows Collection
 
-[![Bilibili Badge](https://img.shields.io/badge/我的B站主页-fb7299?style=for-the-badge&logo=bilibili&logoColor=white&link=https://space.bilibili.com/1840885116)](https://space.bilibili.com/1840885116)
-<br><br>
 [基础工作流](#基础工作流)  |  [进阶工作流](#进阶工作流)  |  [实用工作流](#实用工作流)
 <br>
 </div>
