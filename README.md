@@ -50,7 +50,9 @@ Yolain's ComfyUI Workflows Collection
 [![EasyUse](./assets/easyuse_poster.jpg)](https://github.com/yolain/ComfyUI-Easy-Use)
 
 1. 本合集中的工作流基于 [ComfyUI-Easy-Use](https://github.com/yolain/ComfyUI-Easy-Use) 节点包进行搭建，使用前请确保已安装EasyUse。<br>
-2. 初次使用，请观看 🔽 ComfyUI-Easy-Use 使用技巧。（待上传）
+2. 初次使用，请观看 🔽 ComfyUI-Easy-Use 使用技巧。
+
+https://github.com/yolain/ComfyUI-Yolain-Workflows/assets/73304135/f1f4839c-9977-4645-87bd-8146f2f3e3e6
 
 3. 工作流所需节点包列表
 
