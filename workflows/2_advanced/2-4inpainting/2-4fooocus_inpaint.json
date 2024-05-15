@@ -1,0 +1,618 @@
+{
+  "last_node_id": 147,
+  "last_link_id": 122,
+  "nodes": [
+    {
+      "id": 137,
+      "type": "LoadImage",
+      "pos": [
+        250,
+        490
+      ],
+      "size": {
+        "0": 230,
+        "1": 410
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            107,
+            112
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "pasted/image (84).png",
+        "image"
+      ]
+    },
+    {
+      "id": 139,
+      "type": "easy applyFooocusInpaint",
+      "pos": [
+        840,
+        640
+      ],
+      "size": {
+        "0": 270,
+        "1": 102
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 105,
+          "label": "model"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 114,
+          "label": "latent"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            117
+          ],
+          "shape": 3,
+          "label": "model",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy applyFooocusInpaint"
+      },
+      "widgets_values": [
+        "fooocus_inpaint_head",
+        "inpaint_v26 (1.32GB)"
+      ]
+    },
+    {
+      "id": 142,
+      "type": "InvertMask",
+      "pos": [
+        530,
+        440
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 108,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            111
+          ],
+          "shape": 3,
+          "label": "MASK",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InvertMask"
+      }
+    },
+    {
+      "id": 143,
+      "type": "VAEEncodeForInpaint",
+      "pos": [
+        840,
+        490
+      ],
+      "size": {
+        "0": 230,
+        "1": 100
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 112,
+          "label": "pixels"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 113,
+          "label": "vae"
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 111,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            114,
+            120
+          ],
+          "shape": 3,
+          "label": "LATENT",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncodeForInpaint"
+      },
+      "widgets_values": [
+        6
+      ]
+    },
+    {
+      "id": 145,
+      "type": "easy preSampling",
+      "pos": [
+        840,
+        80
+      ],
+      "size": {
+        "0": 240,
+        "1": 242
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 118,
+          "label": "pipe"
+        },
+        {
+          "name": "image_to_latent",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image_to_latent"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 120,
+          "label": "latent"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            119
+          ],
+          "shape": 3,
+          "label": "pipe"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSampling"
+      },
+      "widgets_values": [
+        20,
+        7,
+        "dpmpp_2m_sde",
+        "karras",
+        1,
+        218340572627800,
+        "fixed"
+      ]
+    },
+    {
+      "id": 141,
+      "type": "easy imageRemBg",
+      "pos": [
+        490,
+        580
+      ],
+      "size": {
+        "0": 320,
+        "1": 310
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 107,
+          "label": "images"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [
+            108
+          ],
+          "shape": 3,
+          "label": "mask",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy imageRemBg"
+      },
+      "widgets_values": [
+        "RMBG-1.4",
+        "Preview",
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 120,
+      "type": "easy a1111Loader",
+      "pos": [
+        560,
+        80
+      ],
+      "size": {
+        "0": 230,
+        "1": 290
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "optional_lora_stack"
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 122,
+          "widget": {
+            "name": "positive"
+          },
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": 90,
+          "widget": {
+            "name": "negative"
+          },
+          "label": "negative",
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            118
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            105
+          ],
+          "shape": 3,
+          "label": "model",
+          "slot_index": 1
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [
+            113
+          ],
+          "shape": 3,
+          "label": "vae",
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy a1111Loader"
+      },
+      "widgets_values": [
+        "Real\\新世界 _v6.0.safetensors",
+        "Baked VAE",
+        -2,
+        "None",
+        1,
+        1,
+        "768 x 1024",
+        512,
+        512,
+        "Positive",
+        "Negative",
+        1,
+        "1girl, close-up,(masterpiece,best quality,hires,extremely detailed,high resolution:1.2),raw photo,<lora:Tool\\lcm_lora_v1-5>, Summer squash"
+      ]
+    },
+    {
+      "id": 147,
+      "type": "easy positive",
+      "pos": [
+        220,
+        40
+      ],
+      "size": [
+        300,
+        180
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "links": [
+            122
+          ],
+          "shape": 3,
+          "label": "positive"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy positive"
+      },
+      "widgets_values": [
+        "Ultra-realistic 8k CG,masterpiece,best quality,(photorealistic:1.4),HDR,absurdres,Professional,RAW photo,lens flare,(film grain:1.1),Bokeh,((Depth of field)),studio light, a woman in a dress , a pink cupcake and bubbles, in front of a green field, 1girl, black_hair, blurry, brown_eyes, dress, grass, lips, short_hair, solo, Highly detailed,Professional,extreme detail description;, emerald, nature, vines, forest, druidic"
+      ],
+      "color": "#346434"
+    },
+    {
+      "id": 130,
+      "type": "easy negative",
+      "pos": [
+        230,
+        270
+      ],
+      "size": {
+        "0": 284.5330810546875,
+        "1": 140.71658325195312
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            90
+          ],
+          "shape": 3,
+          "label": "negative",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy negative"
+      },
+      "widgets_values": [
+        "text,watermark"
+      ],
+      "color": "#af3535"
+    },
+    {
+      "id": 144,
+      "type": "easy kSampler",
+      "pos": [
+        1140,
+        70
+      ],
+      "size": [
+        450,
+        660
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 119,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 117,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    }
+  ],
+  "links": [
+    [
+      90,
+      130,
+      0,
+      120,
+      2,
+      "STRING"
+    ],
+    [
+      105,
+      120,
+      1,
+      139,
+      0,
+      "MODEL"
+    ],
+    [
+      107,
+      137,
+      0,
+      141,
+      0,
+      "IMAGE"
+    ],
+    [
+      108,
+      141,
+      1,
+      142,
+      0,
+      "MASK"
+    ],
+    [
+      111,
+      142,
+      0,
+      143,
+      2,
+      "MASK"
+    ],
+    [
+      112,
+      137,
+      0,
+      143,
+      0,
+      "IMAGE"
+    ],
+    [
+      113,
+      120,
+      2,
+      143,
+      1,
+      "VAE"
+    ],
+    [
+      114,
+      143,
+      0,
+      139,
+      1,
+      "LATENT"
+    ],
+    [
+      117,
+      139,
+      0,
+      144,
+      1,
+      "MODEL"
+    ],
+    [
+      118,
+      120,
+      0,
+      145,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      119,
+      145,
+      0,
+      144,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      120,
+      143,
+      0,
+      145,
+      2,
+      "LATENT"
+    ],
+    [
+      122,
+      147,
+      0,
+      120,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

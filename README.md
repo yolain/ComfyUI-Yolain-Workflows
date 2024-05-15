@@ -137,10 +137,10 @@ https://github.com/yolain/ComfyUI-Yolain-Workflows/assets/73304135/f1f4839c-9977
 ![instantID](./assets/2-2.jpg)
 [⤴️ 返回目录](#目录)
 
-| 工作流名称 | 文件                                                          | 说明                 |
-|:------|:------------------------------------------------------------|:-------------------|
-| 基础    | 待更新                                                         | 组成instantID的最基本的流程 |
-| 百变表情包 | [⬇️ v1.0下载](workflows/2_advanced/2-2instantID/百变大头贴v1.json) | 单个采样器生成多张图，实现表情包自由 |
+| 工作流名称 | 文件                                                                  | 说明                 |
+|:------|:--------------------------------------------------------------------|:-------------------|
+| 基础    | [⬇️ 下载](workflows/2_advanced/2-2instantID/2-2instantID_simple.json) | 组成instantID的最基本的流程 |
+| 百变表情包 | [⬇️ v1.0下载](workflows/2_advanced/2-2instantID/百变大头贴v1.json)         | 单个采样器生成多张图，实现表情包自由 |
 
 #### 2-3 LayerDiffusion
 ![LayerDiffusion](./assets/2-3.jpg)
@@ -157,12 +157,12 @@ https://github.com/yolain/ComfyUI-Yolain-Workflows/assets/73304135/f1f4839c-9977
 ![局部重绘进阶](./assets/2-4.jpg)
 [⤴️ 返回目录](#目录)
 
-| 工作流名称            | 文件                                                             | 说明                          |
-|:-----------------|:---------------------------------------------------------------|:----------------------------|
-| 局部重绘简易对比         | [⬇️ 下载](workflows/2_advanced/2-4Inpainting/InpaintingAll.json) | 需要安装ComfyUI-BrushNet并下载对应模型 |
-| FooocusInpaint使用 | 待更新                                                            | 需要下载FooocusInpaint模型        |
-| BrushNet使用       | 待更新                                                            | 需要安装ComfyUI-BrushNet并下载对应模型 |
-| PowerPaint使用     | 待更新                                                            | 需要安装ComfyUI-BrushNet并下载对应模型 |
+| 工作流名称            | 文件                                                                         | 说明                          |
+|:-----------------|:---------------------------------------------------------------------------|:----------------------------|
+| 局部重绘简易对比         | [⬇️ 下载](workflows/2_advanced/2-4inpainting/2-4InpaintingAll.json)          | 需要安装ComfyUI-BrushNet并下载对应模型 |
+| FooocusInpaint使用 | [⬇️ 下载](workflows/2_advanced/2-4inpainting/2-4fooocus_inpaint.json)        | 需要下载FooocusInpaint模型        |
+| BrushNet使用       | [⬇️ 下载](workflows/2_advanced/2-4inpainting/2-4brushnet.json)               | 需要安装ComfyUI-BrushNet并下载对应模型 |
+| PowerPaint使用     | [⬇️ 下载](workflows/2_advanced/2-4inpainting/2-4powerpaint_outpainting.json) | 需要安装ComfyUI-BrushNet并下载对应模型 |
 
 
 #### 2-5 IC-Light

@@ -1,0 +1,409 @@
+{
+  "last_node_id": 24,
+  "last_link_id": 24,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "easy instantIDApply",
+      "pos": [
+        550,
+        210
+      ],
+      "size": [
+        380,
+        330
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 2,
+          "label": "pipe",
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 6,
+          "label": "image"
+        },
+        {
+          "name": "image_kps",
+          "type": "IMAGE",
+          "link": 5,
+          "label": "image_kps"
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": null,
+          "label": "mask"
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": null,
+          "label": "control_net"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            3
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "negative"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy instantIDApply"
+      },
+      "widgets_values": [
+        "ip-adapter.bin",
+        "CPU",
+        "instantid\\diffusion_pytorch_model.safetensors",
+        1,
+        1,
+        0.9500000000000001,
+        0,
+        1,
+        0.15
+      ]
+    },
+    {
+      "id": 3,
+      "type": "easy a1111Loader",
+      "pos": [
+        140,
+        230
+      ],
+      "size": [
+        390,
+        334
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "optional_lora_stack"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            2
+          ],
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "model"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy a1111Loader"
+      },
+      "widgets_values": [
+        "Real\\新世界 _v6.0.safetensors",
+        "Baked VAE",
+        -1,
+        "None",
+        1,
+        1,
+        "768 x 1024",
+        512,
+        512,
+        "a young girl in a green dress sitting on a tree branch, brunette elf with fairy wings, beautiful adult fairy, beautiful fairie, beautiful and elegant female elf, beautiful fairy, fairy cgsociety, fairylike, fairy, fae, a beautiful pole dancing fairie, fairy look, forest fairy, beautiful fairies, beautiful adult library fairy, elf long weaving brown hair",
+        "(((nsfw))),((disfigured)),((bad art)),((deformed)),((extra limbs)),((b&w)),weird colors,blurry,(((duplicate))),((morbid)),((mutilated)),[out of frame],extra fingers,mutated hands,((poorly drawn hands)),((poorly drawn face)),(((mutation))),(((deformed))),blurry,((bad anatomy)),(((bad proportions))),((extra limbs)),cloned face,(((disfigured))),out of frame,ugly,extra limbs,(bad anatomy),gross proportions,(malformed limbs),((missing arms)),((missing legs)),(((extra arms))),(((extra legs))),mutated hands,(fused fingers),(too many fingers),(((long neck))),ugly,tiling,poorly drawn hands,poorly drawn feet,poorly drawn face,out of frame,mutation,mutated,extra limbs,extra legs,extra arms,disfigured,deformed,cross-eye,body out of frame,blurry,bad art,bad anatomy,((low res)),bad quality,badhandv4,bad_pictures,FastNegativeEmbedding,realisticvision-negative-embedding,difConsistency_negative_v2,ng_deepnegative_v1_75t,(badhandv4:1.2),(worst quality:2),(low quality:2),(normal quality:2),lowres,bad anatomy,bad hands,normal quality,((monochrome)),((grayscale)) watermark\n",
+        1,
+        false
+      ]
+    },
+    {
+      "id": 6,
+      "type": "LoadImage",
+      "pos": [
+        140,
+        650
+      ],
+      "size": [
+        270,
+        360
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            6
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ycy001.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "LoadImage",
+      "pos": [
+        440,
+        630
+      ],
+      "size": [
+        250,
+        380
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "pasted/image (83).png",
+        "image"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "easy kSampler",
+      "pos": [
+        730,
+        580
+      ],
+      "size": [
+        380,
+        580
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 4,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "label": "image",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Preview",
+        0,
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "easy preSampling",
+      "pos": [
+        940,
+        210
+      ],
+      "size": [
+        320,
+        240
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "image_to_latent",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image_to_latent"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "latent"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            4
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSampling"
+      },
+      "widgets_values": [
+        25,
+        8,
+        "ddim",
+        "exponential",
+        1,
+        694147052057186,
+        "randomize"
+      ]
+    }
+  ],
+  "links": [
+    [
+      2,
+      3,
+      0,
+      1,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      3,
+      1,
+      0,
+      4,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      4,
+      4,
+      0,
+      5,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      5,
+      7,
+      0,
+      1,
+      2,
+      "IMAGE"
+    ],
+    [
+      6,
+      6,
+      0,
+      1,
+      1,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
