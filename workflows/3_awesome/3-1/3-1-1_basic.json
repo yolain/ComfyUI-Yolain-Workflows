@@ -4051,7 +4051,7 @@
     "note": "<h5>姿势图参考</h5><p>参考原始的woman_head图去做缩放后的openpose图，可自行调整。</p><p>三视图可使用我给的示例，也可以自己找图。</p><h5>分割图片</h5><p>根据第一次扩散后的生成效果增减表达式偏移数值。</p><h5>脸部朝向选择</h5><p>选择图片后可调整为<b>keep_last_selection</b>会记住上一次选择。</p>",
     "need_models": [
       {"name": "openposexl_controlnet", "source_url":"https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/resolve/main/OpenPoseXL2.safetensors"},
-      {"name": "TTPlanet Tile", "source_url": "https://pan.baidu.com/share/init?surl=JRUGLNBtzNPHqbteWLIhVg&pwd=66RN"}
+      {"name": "TTPlanet Tile", "source_url": "https://www.bilibili.com/video/BV16i42127Dh"}
     ]
   },
   "version": 0.4
