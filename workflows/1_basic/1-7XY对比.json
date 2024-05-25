@@ -167,7 +167,7 @@
         "Select the LoRA to add to the text",
         "Select the Wildcard to add to the text",
         196771436577976,
-        "randomize",
+        "fixed",
         false
       ]
     },
