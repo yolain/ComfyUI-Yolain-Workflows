@@ -42,10 +42,6 @@ Yolain's ComfyUI Workflows Collection
     - 💎 [3-1-1.角色三视图与特写](#3-1-1-角色三视图与特写)
   - 3-2 电商系列
     - 💎 [3-2-1.电商产品主图](#3-2-1-电商产品主图)
-  - 3-3 人像系列
-    - 💎 3-3-1.人像摄影（风格与人脸迁移）
-    - 💎 3-3-2.人像摄影（保留原图局部重绘）
-    - 💎 3-3-3.人像摄影（双人照系列）
 
   
 ### 用前必读
@@ -110,7 +106,7 @@ https://github.com/yolain/ComfyUI-Yolain-Workflows/assets/73304135/f1f4839c-9977
 [⬇️ 下载工作流](workflows/1_basic/1-10背景去除.json) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [⤴️ 返回目录](#目录)
 #### 1-11 重绘扩图
 [![重绘扩图](./assets/1-11.jpg)](workflows/1_basic/1-11重绘扩图.json)
-[⬇️ 下载工作流](workflows/1_basic/1-11重绘扩图.json) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [⤴️ 返回目录](#目录)
+[⬇️ 下载工作流](workflows/1_basic/1-11重绘_扩图.json) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [⤴️ 返回目录](#目录)
 #### 1-12 噪声注入
 [![噪声注入](./assets/1-12.jpg)](workflows/1_basic/1-12噪声注入.json)
 [⬇️ 下载工作流](workflows/1_basic/1-12噪声注入.json) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [⤴️ 返回目录](#目录)
